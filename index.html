@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Clock</title>
+</head>
+<body>
+    <div class="container">
+        <button id="add" class="add" autofocus>+</button>
+        <div class="time" id="Clock" onload="showTime()"><div id="h"></div><div class="colon">:</div><div id="m"></div></div>
+        <div class="clock">
+            <div class="mode">
+                <div class="moon"><img src="./img/moon.png" alt="" srcset=""></div>
+                <div class="sun"><img src="./img/sun.png" alt="" srcset=""></div>
+            </div>
+            <div class="h" data-hour></div>
+            <div class="m" data-minute></div>
+            <div class="s" data-second></div>
+        </div>
+    </div>
+    <div class="items">
+        <ul>
+        </ul>
+        <ul id="ul"></ul>
+    </div>
+    <div class="search">
+        <form>
+            <input type="text" name="search" id="SID" class="search-input" placeholder="Enter a place" autocomplete="off">
+            <img src="./img/search.png" alt="" srcset="">
+            <input type="submit" value="" class="submit" id="submit">
+        </form>
+    </div>
+    <div class="alert-box">
+        <div class="alert">
+            <span class="closebtn" onclick="body.classList.remove('full');" >OK</span>
+            <img src="/img/error.png" alt="" srcset="">
+            <p>Full</p>
+          </div>
+    </div>
+    <p>Credit by <a href="https://github.com/nabilotchi">NABIL OTCHI</a></p>
+    <script src="./js/app.js"></script>
+</body>
+</html>
