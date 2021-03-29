@@ -154,6 +154,7 @@ p a:hover{
 .add:hover{
     background-color:#f6ab96 ;
     border: 3px solid #f6ab96;
+    transform: scale(1.2);
 }
 .add::before{
     position: absolute;

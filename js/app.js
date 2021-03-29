@@ -121,12 +121,27 @@ fetch(url, { signal })
             city = state1  
         }
 //innerHtml
-           const markup = `<div class="location"><span class="city">${city}</span>, <span class="country">${countryCode}</span></div>
-            <div class="time-def"><span>${gmt}</span> HRS | GMT</div>
-            <div class="landmark"><img src="/img/Landmarks/${countryCode}.png" alt="" srcset=""></div>
-            <div class="time" id="Clock" onload="showTime()"><div id="h">${hours}</div><div class="colon">:</div><div id="m">${minutes}</div></div>`;
+ //*time for minutes
+ setInterval(showTimeS, 1000)
+ function showTimeS(){
+     let date = new Date();
+     let m = date.getMinutes();
+         
+     m = (m < 10) ? "0" + m : m;
 
-            creatLi.innerHTML = markup;
+     const markup = `<div class="location"><span class="city">${city}</span>, <span class="country">${countryCode}</span></div>
+     <div class="time-def"><span>${gmt}</span> HRS | GMT</div>
+     <div class="landmark"><img src="/img/Landmarks/${countryCode}.png" alt="" srcset=""></div>
+     <div class="time" id="Clock" onload="showTime()"><div id="h">${hours}</div><div class="colon">:</div><div id="m">${m}</div></div>`;
+
+     creatLi.innerHTML = markup;
+
+     if(m == 00){
+        setTimeout(call, 1000);
+     }
+
+    setTimeout(showTimeS, 1000);
+ }
     })
     }
 )
